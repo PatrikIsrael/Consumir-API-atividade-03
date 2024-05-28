@@ -1,0 +1,101 @@
+/* Estilos gerais */
+body {
+    font-family: var(--font-secundaria);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: var(--cor-primaria);
+    padding: 15px;
+    text-align: center;
+}
+
+.cabecalho a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+.cabecalho a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* Título */
+.titulo {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Botão de Busca */
+.btn-buscar {
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.3s ease;
+}
+
+.btn-buscar:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Botão Adicionar Filme */
+.btn-add-filme {
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add-filme:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Lista de Filmes */
+.lista-filmes {
+    width: 100%;
+}
+
+/* Tabela de Filmes */
+.table {
+    width: 100%;
+}
+
+/* Linha da Tabela */
+.table tr {
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Célula da Tabela */
+.table th,
+.table td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center;
+    padding: 20px;
+}
+
+.rodape h2 {
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+.rodape img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.rodape a:hover {
+    color: var(--cor-secundaria);
+}

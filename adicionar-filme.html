@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Filme</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-4 mb-3">Adicionar Filme</h1>
+    <form id="formAdicionarFilme">
+        <div class="form-group">
+            <label for="titulo">Título:</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Insira o título do filme" required />
+        </div>
+        <div class="form-group">
+            <label for="sinopse">Sinopse:</label>
+            <textarea class="form-control" id="sinopse" name="sinopse" placeholder="Insira a sinopse do filme" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="genero">Gênero:</label>
+            <input type="text" class="form-control" id="genero" name="genero" placeholder="Insira o gênero do filme" required />
+        </div>
+        <div class="form-group">
+            <label for="anoLancamento">Ano de Lançamento:</label>
+            <input type="text" class="form-control" id="anoLancamento" name="anoLancamento" placeholder="DD-MM-AAAA" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+    </form>
+    <a href="exibir-filmes.html" class="btn btn-secondary mt-3">Voltar</a>
+</div>
+
+<script src="jquery/jquery-3.7.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/adicionar-filme.js"></script>
+</body>
+</html>

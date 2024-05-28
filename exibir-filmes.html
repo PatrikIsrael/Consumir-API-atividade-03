@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Filmes</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Lista de Filmes</h1>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="buscarFilme" placeholder="Buscar filme por título">
+            <div class="input-group-append">
+                <button id="btnBuscar" class="btn btn-primary" type="button">
+                    <span class="mr-1">Buscar</span>
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Sinopse</th>
+                    <th scope="col">Gênero</th>
+                    <th scope="col">Ano de Lançamento</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaFilmes">
+            </tbody>
+        </table>
+        <a href="adicionar-filme.html" class="btn btn-primary">Adicionar Novo Filme</a>
+    </div>
+    <script src="jquery/jquery-3.7.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/exebir-filme.js"></script>
+</body>
+</html>

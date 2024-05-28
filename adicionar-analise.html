@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Adicionar Análise</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-4 mb-3">Escreva a Análise do Filme</h1>
+    <form id="formAdicionarAnalise" action="/adicionar-analise" method="post">
+        <input type="hidden" id="filmeId" name="id" value="${filme.id}" />
+        <div class="form-group">
+            <label for="analise">Análise do Filme:</label>
+            <textarea class="form-control" id="analise" name="analise" rows="5" placeholder="Escreva aqui sua análise do filme"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="nota">Nota do Filme (0-10):</label>
+            <input type="number" class="form-control" id="nota" name="nota" min="0" max="10" placeholder="Digite a nota do filme" />
+        </div>
+
+        <button id="salvaAnaliseButton" type="submit" class="btn btn-primary">Salvar</button>
+        <a href="detalhe-filme.html" class="btn btn-primary">Voltar</a>
+    </form>
+</div>
+
+<script src="jquery/jquery-3.7.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/adicionar-analise.js"></script>
+</body>
+</html>
