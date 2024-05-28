@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <h1 class="mt-4 mb-3">Escreva a Análise do Filme</h1>
-    <form id="formAdicionarAnalise" action="/adicionar-analise" method="post">
+    <form id="formAdicionarAnalise">
         <input type="hidden" id="filmeId" name="id" value="${filme.id}" />
         <div class="form-group">
             <label for="analise">Análise do Filme:</label>
@@ -22,7 +22,7 @@
             <input type="number" class="form-control" id="nota" name="nota" min="0" max="10" placeholder="Digite a nota do filme" />
         </div>
 
-        <button id="salvaAnaliseButton" type="submit" class="btn btn-primary">Salvar</button>
+        <button id="salvaAnaliseButton" type="button" class="btn btn-primary">Salvar</button>
         <a href="detalhe-filme.html" class="btn btn-primary">Voltar</a>
     </form>
 </div>

@@ -1,34 +1,28 @@
 $(document).ready(function() {
-    // Evento de submit do formulário de adicionar análise
-    $('#formAdicionarAnalise').submit(function(event) {
-        event.preventDefault(); // Evita o comportamento padrão de recarregar a página ao enviar o formulário
-        
+    $('#salvaAnaliseButton').click(function() {
         // Obtém os dados do formulário
-        let analise = $('#analise').val();
-        let nota = $('#nota').val();
-        let filmeId = $('#filmeId').val();
+        let analise = {
+            id: $('#filmeId').val(),
+            analise: $('#analise').val(),
+            nota: $('#nota').val()
+        };
 
-        // Verifica se a nota está dentro do intervalo válido (0-10)
-        if (nota < 0 || nota > 10) {
-            alert('A nota do filme deve estar entre 0 e 10.');
-            return;
-        }
+        console.log('Dados da análise a serem enviados:', analise);
 
         // Envia os dados da análise para o backend via AJAX
         $.ajax({
-            url: `http://localhost:8080/filme/adicionar-analise?id=${filmeId}`,
+            url: 'http://localhost:8080/adicionar-analise',
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({ analise: analise, nota: nota }),
+            data: JSON.stringify(analise), 
             success: function(data) {
-                // Exibe uma mensagem de sucesso e redireciona para a página de detalhes do filme
-                alert('Análise adicionada com sucesso!');
-                window.location.href = `detalhe-filme.html?id=${filmeId}`;
+                console.log('Resposta do servidor:', data);
+                alert('Análise do filme adicionada com sucesso!');
+                window.location.href = 'detalhe-filme.html?id=' + analise.id;
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                // Em caso de erro, exibe uma mensagem de erro
-                console.error('Erro ao adicionar análise:', textStatus, errorThrown);
-                alert('Não foi possível adicionar a análise.');
+                console.error('Erro ao adicionar análise:', jqXHR, textStatus, errorThrown);
+                alert('Não foi possível adicionar a análise do filme.');
             }
         });
     });
