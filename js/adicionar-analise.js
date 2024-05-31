@@ -1,29 +1,41 @@
 $(document).ready(function() {
-    $('#salvaAnaliseButton').click(function() {
-        // Obtém os dados do formulário
+    const urlParams = new URLSearchParams(window.location.search);
+    const filmeId = urlParams.get('id');
+
+    if (!filmeId) {
+        alert('ID do filme não encontrado na URL.');
+        return;
+    }
+
+    $('#salvaAnaliseButton').click(function(event) {
+        event.preventDefault();
+
         let analise = {
-            id: $('#filmeId').val(),
             analise: $('#analise').val(),
-            nota: $('#nota').val()
+            nota: parseInt($('#nota').val()) // Garantir que nota seja um inteiro
         };
 
-        console.log('Dados da análise a serem enviados:', analise);
+        console.log('Dados a serem enviados:', analise); // Log dos dados
 
-        // Envia os dados da análise para o backend via AJAX
         $.ajax({
-            url: 'http://localhost:8080/adicionar-analise',
+            url: `http://localhost:8080/filme/adicionar-analise/${filmeId}`,
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify(analise), 
+            data: JSON.stringify(analise),
             success: function(data) {
                 console.log('Resposta do servidor:', data);
                 alert('Análise do filme adicionada com sucesso!');
-                window.location.href = 'detalhe-filme.html?id=' + analise.id;
+                window.location.href = `detalhe-filme.html?id=${filmeId}`;
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                console.error('Erro ao adicionar análise:', jqXHR, textStatus, errorThrown);
+                console.error('Erro ao adicionar análise:', textStatus, errorThrown);
+                console.error('Resposta do servidor:', jqXHR.responseText);
                 alert('Não foi possível adicionar a análise do filme.');
             }
         });
+    });
+
+    $('#voltarButton').click(function() {
+        window.location.href = `detalhe-filme.html?id=${filmeId}`;
     });
 });

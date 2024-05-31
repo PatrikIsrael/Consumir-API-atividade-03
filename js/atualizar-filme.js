@@ -1,7 +1,7 @@
 $(document).ready(function() {
     // Evento de submit do formulário de editar filme
     $('#formEditarFilme').submit(function(event) {
-        event.preventDefault(); // Evita o comportamento padrão de recarregar a página
+        event.preventDefault();
 
         // Obtém os dados do formulário
         let filme = {
@@ -23,7 +23,7 @@ $(document).ready(function() {
             data: JSON.stringify(filme),
             success: function(data) {
                 alert('Filme atualizado com sucesso!');
-                window.location.href = '/exibir-filmes.html'; // Redireciona para a página de exibição de filmes
+                window.location.href = '/exibir-filmes.html';
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.error('Erro ao atualizar filme:', textStatus, errorThrown);

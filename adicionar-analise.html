@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +12,6 @@
 <div class="container">
     <h1 class="mt-4 mb-3">Escreva a Análise do Filme</h1>
     <form id="formAdicionarAnalise">
-        <input type="hidden" id="filmeId" name="id" value="${filme.id}" />
         <div class="form-group">
             <label for="analise">Análise do Filme:</label>
             <textarea class="form-control" id="analise" name="analise" rows="5" placeholder="Escreva aqui sua análise do filme"></textarea>
@@ -23,7 +22,7 @@
         </div>
 
         <button id="salvaAnaliseButton" type="button" class="btn btn-primary">Salvar</button>
-        <a href="detalhe-filme.html" class="btn btn-primary">Voltar</a>
+        <button id="voltarButton" type="button" class="btn btn-secondary">Voltar</button>
     </form>
 </div>
 
