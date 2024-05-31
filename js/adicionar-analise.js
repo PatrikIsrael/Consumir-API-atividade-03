@@ -12,10 +12,10 @@ $(document).ready(function() {
 
         let analise = {
             analise: $('#analise').val(),
-            nota: parseInt($('#nota').val()) // Garantir que nota seja um inteiro
+            nota: parseInt($('#nota').val())
         };
 
-        console.log('Dados a serem enviados:', analise); // Log dos dados
+        console.log('Dados a serem enviados:', analise);
 
         $.ajax({
             url: `http://localhost:8080/filme/adicionar-analise/${filmeId}`,
