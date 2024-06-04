@@ -1,3 +1,21 @@
+/* Definição de variáveis CSS para os temas */
+:root {
+    --cor-primaria: #007bff;
+    --cor-secundaria: #6c757d;
+    --cor-fundo: #ffffff;
+    --cor-texto: #000000;
+    --font-principal: 'Roboto', sans-serif;
+    --font-secundaria: 'Open Sans', sans-serif;
+}
+
+/* Variáveis para o modo escuro */
+body.dark-mode {
+    --cor-primaria: #444444;
+    --cor-secundaria: #555555;
+    --cor-fundo: #121212;
+    --cor-texto: #ffffff;
+}
+
 /* Estilos gerais */
 body {
     font-family: var(--font-secundaria);
